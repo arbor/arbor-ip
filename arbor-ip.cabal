@@ -1,8 +1,8 @@
-name:                hs-ip
+name:                arbor-ip
 version:             1.0.0
 -- synopsis:
 -- description:
-homepage:            https://github.com/alexeyraga/hs-ip#readme
+homepage:            https://github.com/packetloop/arbor-ip#readme
 license:             BSD3
 license-file:        LICENSE
 author:              Alexey Raga
@@ -21,9 +21,9 @@ library
 
 source-repository head
   type:     git
-  location: https://github.com/alexeyraga/hs-ip
+  location: https://github.com/packetloop/arbor-ip
 
-test-suite hs-ip-test
+test-suite arbor-ip-test
   type:                 exitcode-stdio-1.0
   hs-source-dirs:       test
   main-is:              Spec.hs
@@ -31,7 +31,7 @@ test-suite hs-ip-test
   build-depends:        base
                       , hedgehog
                       , hw-hspec-hedgehog
-                      , hs-ip
+                      , arbor-ip
                       , hspec
   ghc-options:          -threaded -rtsopts -with-rtsopts=-N
   default-language:     Haskell2010
