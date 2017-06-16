@@ -16,9 +16,10 @@ import Data.Word
 
 newtype IPv4BitPower = IPv4BitPower Word32 deriving (Eq, Show, Ord)
 newtype IPv4 = IPv4 Word32 deriving (Eq, Show, Ord, Enum, Bounded)
+
 data IPv4Range = IPv4Range
-  { rangeBase     :: IPv4
-  , rangeBitPower :: IPv4BitPower
+  { rangeBase     :: !IPv4
+  , rangeBitPower :: !IPv4BitPower
   } deriving (Eq, Show, Ord)
 
 instance Bounded IPv4BitPower where
