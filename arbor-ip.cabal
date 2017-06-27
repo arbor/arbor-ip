@@ -3,10 +3,10 @@ version:             1.0.0
 -- synopsis:
 -- description:
 homepage:            https://github.com/packetloop/arbor-ip#readme
-license:             BSD3
+license:             MIT
 license-file:        LICENSE
-author:              Alexey Raga
-maintainer:          alexey.raga@gmail.com
+author:              Arbor Networks
+maintainer:          mayhem@arbor.net
 copyright:           Alexey Raga
 category:            Data
 build-type:          Simple
