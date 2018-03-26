@@ -1,3 +1,6 @@
+{-# LANGUAGE DeriveAnyClass             #-}
+{-# LANGUAGE DeriveGeneric              #-}
+{-# LANGUAGE DerivingStrategies         #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE ScopedTypeVariables        #-}
 
@@ -9,18 +12,27 @@ module Arbor.Network.Ip
 , rangeFrom, rangeFrom'
 ) where
 
+import Control.DeepSeq
 import Data.Bits
 import Data.List
 import Data.Monoid
 import Data.Word
+import GHC.Generics
 
-newtype IPv4BitPower = IPv4BitPower Word32 deriving (Eq, Show, Ord)
-newtype IPv4 = IPv4 Word32 deriving (Eq, Show, Ord, Enum, Bounded)
+newtype IPv4BitPower = IPv4BitPower Word32
+  deriving (Eq, Show, Ord, Generic)
+  deriving anyclass NFData
+
+newtype IPv4 = IPv4 Word32
+  deriving (Eq, Show, Ord, Enum, Bounded, Generic)
+  deriving anyclass NFData
 
 data IPv4Range = IPv4Range
   { rangeBase     :: !IPv4
   , rangeBitPower :: !IPv4BitPower
-  } deriving (Eq, Show, Ord)
+  }
+  deriving (Eq, Show, Ord, Generic)
+  deriving anyclass NFData
 
 instance Bounded IPv4BitPower where
   minBound = IPv4BitPower 0

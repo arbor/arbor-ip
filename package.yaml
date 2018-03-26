@@ -15,6 +15,7 @@ library:
   - Arbor.Network.Ip
   dependencies:
   - base >=4.7 && <5
+  - deepseq
 
 tests:
   arbor-ip-test:
@@ -26,7 +27,7 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - base
-    - hedgehog
-    - hw-hspec-hedgehog
     - arbor-ip
+    - hedgehog
     - hspec
+    - hw-hspec-hedgehog
