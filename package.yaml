@@ -1,0 +1,32 @@
+name: arbor-ip
+version: '1.0.0'
+category: Data
+author: Arbor Networks
+maintainer: mayhem@arbor.net
+copyright: Arbor Networks
+license: MIT
+github: packetloop/arbor-ip
+extra-source-files:
+- README.md
+
+library:
+  source-dirs: src
+  exposed-modules:
+  - Arbor.Network.Ip
+  dependencies:
+  - base >=4.7 && <5
+
+tests:
+  arbor-ip-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - base
+    - hedgehog
+    - hw-hspec-hedgehog
+    - arbor-ip
+    - hspec

@@ -4,18 +4,18 @@ where
 import Arbor.Network.Ip
 import Data.Semigroup
 import Data.Word
+import HaskellWorks.Hspec.Hedgehog
+import Hedgehog
 import Test.Hspec
 
-import           HaskellWorks.Hspec.Hedgehog
-import           Hedgehog
-import qualified Hedgehog.Gen                as Gen
-import qualified Hedgehog.Range              as Range
+import qualified Hedgehog.Gen   as G
+import qualified Hedgehog.Range as R
 
 {-# ANN module ("HLint: ignore Redundant do"  :: String) #-}
 
-ipOctets :: Monad m => Gen m (Word8, Word8, Word8, Word8)
+ipOctets :: MonadGen m => m (Word8, Word8, Word8, Word8)
 ipOctets =
-  let w8 = Gen.word8 Range.constantBounded
+  let w8 = G.word8 R.constantBounded
   in (,,,) <$> w8 <*> w8 <*> w8 <*> w8
 
 spec :: Spec
