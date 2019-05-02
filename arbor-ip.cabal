@@ -4,10 +4,12 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 25f6ae4897941ab7a629bf3e3a810cc15dbc58623aa92e4d6db35e10ec4e3cbb
+-- hash: 97f90423979561113b7d421d4aaf35716efa02fba1826fa1c0eb45dde10992e4
 
 name:           arbor-ip
 version:        1.0.0
+synopsis:       something
+description:    something something something something something
 category:       Data
 homepage:       https://github.com/packetloop/arbor-ip#readme
 bug-reports:    https://github.com/packetloop/arbor-ip/issues
